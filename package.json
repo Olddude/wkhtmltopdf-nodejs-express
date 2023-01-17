@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf dist && rm -rf public && mkdir public",
+    "clean": "rm -rf dist",
     "prestart": "yarn clean",
     "start": "ts-node-dev -r dotenv/config ./src/main.ts",
     "build": "tsc --project tsconfig.app.json"
