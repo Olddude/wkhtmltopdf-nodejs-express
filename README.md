@@ -1,2 +1,5 @@
 # wkhtmltopdf-nodejs-express
-wkhtmltopdf
+to run the app launch it with
+```bash
+./start.sh
+```
