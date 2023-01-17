@@ -1,0 +1,7 @@
+node_modules/
+public/
+dist/
+assets/
+**/.DS_STORE
+request.sh
+todos.txt

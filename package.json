@@ -1,0 +1,35 @@
+{
+  "name": "wkhtmltopdf-nodejs-express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf dist && rm -rf public && mkdir public",
+    "prestart": "yarn clean",
+    "start": "ts-node-dev -r dotenv/config ./src/main.ts",
+    "build": "tsc --project tsconfig.app.json"
+  },
+  "dependencies": {
+    "axios": "^1.2.2",
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "jsdom": "^21.0.0",
+    "log4js": "^6.7.1",
+    "morgan": "^1.10.0",
+    "wkhtmltopdf": "^0.4.0"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.1",
+    "@types/express": "^4.17.15",
+    "@types/jsdom": "^20.0.1",
+    "@types/morgan": "^1.9.4",
+    "@types/node": "^18.11.18",
+    "@types/wkhtmltopdf": "^0.3.4",
+    "eslint": "^8.32.0",
+    "nodemon": "^2.0.20",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.4"
+  }
+}
