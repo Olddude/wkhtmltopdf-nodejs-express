@@ -8,6 +8,7 @@ import { pipeline, Transform, TransformCallback } from 'stream';
 import { createConfig } from '../config';
 import { createApiClient } from '../clients/api-client';
 import { createPdf } from './pdf';
+import { AnyPayload } from '../models/payload';
 
 class TransformHtmlStream extends Transform {
   async _transform(chunk: any, encoding: BufferEncoding, callback: TransformCallback): Promise<void> {
@@ -21,24 +22,24 @@ class TransformHtmlStream extends Transform {
   }
 }
 
-async function generateHere(data: any) {
+async function generateHere(payload: AnyPayload) {
   const config = await createConfig();
   const templatePath = resolve(cwd(), 'src', 'templates', 'report.ejs');
   const template = await readFile(templatePath, { encoding: 'utf-8' });
   const outputPath = resolve(cwd(), config.publicDir, 'index.html');
-  const renderedHtml = ejs.render(template, data, {});
+  const renderedHtml = ejs.render(template, payload, {});
   await writeFile(outputPath, renderedHtml, { encoding: 'utf-8' });
 }
 
-async function generateWithApi(data: any) {
+async function generateWithApi(payload: AnyPayload) {
   const apiClient = await createApiClient();
-  await apiClient.generateReport(data);
+  await apiClient.generateReport(payload);
 }
 
-async function createReport(data: any) {
+async function createReport(payload: AnyPayload) {
   const config = await createConfig();
-  // await generateHere(data);
-  await generateWithApi(data);
+  await generateHere(payload);
+  // await generateWithApi(data);
   const inputHtmlFileName = 'index.html';
   const inputHtmlFilePath = resolve(cwd(), config.publicDir, inputHtmlFileName);
   const inputHtmlStream = createReadStream(inputHtmlFilePath, { encoding: 'utf-8' });

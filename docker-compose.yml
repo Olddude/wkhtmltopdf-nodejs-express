@@ -13,8 +13,8 @@ services:
       PUBLIC_DIR: public
       MY_HOST_SERVICE_URL: 
     volumes:
-      - public:/tmp/wkhtmltopdf-nodejs-express/public
-      - templates:/tmp/wkhtmltopdf-nodejs-express/templates
+      - public:/app/public
+      - templates:/app/templates
     ports:
       - 3000:3000
       - 9229:9229 # - node inspector for debugging
