@@ -1,7 +1,11 @@
+# Node
 node_modules/
 public/
 dist/
 assets/
 **/.DS_STORE
-request.sh
-todos.txt
+
+# TLS
+server.crt
+server.key
+server.pem

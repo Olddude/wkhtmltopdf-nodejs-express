@@ -7,8 +7,9 @@ async function main() {
   const config = await createConfig();
   logger.info(config);
   const server = await createServer();
-  server.listen(config.port, config.host, () => {
-    logger.info(`http://${config.host}:${config.port}`);
+  const { port, host, protocol } = config.server;
+  server?.listen(port, host, () => {
+    logger.info(`${protocol}://${host}:${port}`);
   });
 }
 

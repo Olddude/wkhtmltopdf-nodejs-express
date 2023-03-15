@@ -1,4 +1,5 @@
 import log4js from 'log4js';
+
 import { createConfig } from './config';
 
 async function createLogger(name: string) {

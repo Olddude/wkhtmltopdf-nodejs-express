@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <style>
+    body,
+    table,
+    tbody,
+    tr,
+    td {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      border-spacing: 0;
+    }
+    .index {
+      min-height: 1000px;
+      font-size: 14px;
+      font-family: serif;
+      color: #333333;
+      background: transparent;
+    }
+    .index__body {
+      padding: 20px;
+    }
+    .index__title {
+      font-size: 28px;
+      font-weight: bolder;
+    }
+    .index__content {
+      margin-top: 28px;
+      line-height: 28px;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <div class="index">
+            <div class="index__body">
+              <div class="index__title"><%= title %></div>
+              <div class="index__content"><%= content %></div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </div>
+</body>
+</html>

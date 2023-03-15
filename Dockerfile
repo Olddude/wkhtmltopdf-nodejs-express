@@ -8,6 +8,7 @@ RUN apt-get install -y nodejs tree wkhtmltopdf
 
 WORKDIR /app
 COPY . .
+COPY ./scripts/ .
 RUN npm install -g npm@latest yarn@latest
 RUN yarn install
 RUN yarn build
